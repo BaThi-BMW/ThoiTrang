@@ -1,79 +1,105 @@
 /**
- * VOGUE X - CORE JAVASCRIPT SYSTEM (FIXED)
- * Khắc phục lỗi Null Elements khi dùng chung file JS cho nhiều trang HTML khác nhau.
+ * VOGUE ELITE - CORE JAVASCRIPT SYSTEM
+ * Hệ thống xử lý tương tác giao diện Tạp chí Thời trang & Phong cách.
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. PHÂN VÙNG DỮ LIỆU BÌNH LUẬN CHO TỪNG TRANG ---
-    const currentPath = window.location.pathname;
-    let pageKey = "global_comments";
-    
-    if (currentPath.includes("tin-tuc.html")) pageKey = "news_comments";
-    else if (currentPath.includes("xu-huong.html")) pageKey = "trend_comments";
-    else if (currentPath.includes("lam-dep.html")) pageKey = "beauty_comments";
+// === CHẶNG 01: Kiểm tra JavaScript đã chạy bằng console và biến ===
+const siteName = "Vogue Elite";
+let mainTopic = "Thời trang cao cấp & Phong cách đương đại";
+let totalImages = 3;
+let isSystemReady = true;
 
-    // Bình luận mặc định ban đầu
-    const defaultComments = [
-        { user: "Khánh An (Model)", text: "Nội dung phân tích bài viết rất sâu sắc và đúng thực tế!" },
-        { user: "Hoàng Phong", text: "Thiết kế giao diện tạp chí nhìn chất và cháy mắt thật sự." }
-    ];
+console.log("=== VOGUE ELITE FASHION JS LOADED ===");
+console.log("Website Name:", siteName);
+console.log("Chủ đề chính:", mainTopic);
+console.log("Hệ thống sẵn sàng:", isSystemReady);
 
-    // Lấy dữ liệu từ bộ nhớ trình duyệt (LocalStorage)
-    let comments = JSON.parse(localStorage.getItem(pageKey)) || defaultComments;
+// === CHẶNG 02: Đổi nội dung tiêu đề bằng DOM ===
+const mainTitle = document.getElementById("mainTitle");
+const welcomeText = document.getElementById("welcomeText");
 
-    // Lấy các phần tử HTML (DOM)
-    const commentForm = document.getElementById("commentForm");
-    const commentInput = document.getElementById("commentInput");
-    const commentList = document.getElementById("commentList");
-    const commentCount = document.getElementById("commentCount");
+if (mainTitle && welcomeText) {
+    mainTitle.textContent = "ĐẤU TRƯỜNG THỜI TRANG CAO CẤP";
+    welcomeText.textContent = "Cập nhật các bộ sưu tập đỉnh cao và khoảnh khắc sàn diễn huyền thoại.";
+}
 
-    // Hàm vẽ danh sách bình luận ra giao diện
-    function renderComments() {
-        // SỬA LỖI: Chỉ chạy nếu trang hiện tại CÓ danh sách hiển thị bình luận
-        if (!commentList) return; 
-        
-        commentList.innerHTML = "";
-        comments.forEach(item => {
-            const div = document.createElement("div");
-            div.className = "comment-item";
-            div.innerHTML = `<strong>${item.user}:</strong><p>${item.text}</p>`;
-            commentList.appendChild(div);
+// === CHẶNG 03: Thêm nút chào mừng bằng sự kiện click ===
+const helloBtn = document.getElementById("helloBtn");
+const helloResult = document.getElementById("helloResult");
+
+if (helloBtn && helloResult) {
+    helloBtn.addEventListener("click", function() {
+        helloResult.textContent = "Chào mừng Fashionista! Chúc bạn tìm thấy những cảm hứng phối đồ thời thượng nhất tại bản tin năm nay!";
+    });
+}
+
+// === CHẶNG 05: Menu tương tác (Mở/đóng menu khi responsive) ===
+const menuToggle = document.getElementById("menuToggle");
+const mainMenu = document.getElementById("mainMenu");
+
+if (menuToggle && mainMenu) {
+    menuToggle.addEventListener("click", function() {
+        mainMenu.classList.toggle("active");
+    });
+}
+
+// === CHẶNG 08: Lọc Gallery ảnh theo nhóm (Sân khấu, Tuyển thủ -> Người mẫu, Cúp -> Giải thưởng) ===
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+filterButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        // Xóa class active ở tất cả các nút và thêm vào nút vừa bấm
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filterValue = button.dataset.filter;
+
+        galleryItems.forEach(function(item) {
+            const itemCategory = item.dataset.category;
+            // Nếu chọn "all" hoặc trùng category thì hiện, ngược lại thì ẩn
+            if (filterValue === "all" || itemCategory === filterValue) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
         });
-        
-        if (commentCount) commentCount.textContent = comments.length;
-    }
-
-    // Chạy hàm hiển thị bình luận lần đầu
-    renderComments();
-
-    // Xử lý sự kiện gửi bình luận
-    // SỬA LỖI: Chỉ kích hoạt nếu trang hiện tại CÓ form bình luận
-    if (commentForm && commentInput) {
-        commentForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const textValue = commentInput.value.trim();
-            if (!textValue) return;
-
-            comments.unshift({ user: "Bạn (Vừa xong)", text: textValue });
-            localStorage.setItem(pageKey, JSON.stringify(comments));
-            renderComments();
-            commentInput.value = ""; // Xóa trống ô nhập
-        });
-    }
-
-    // --- 2. QUẢN LÝ FORM ĐĂNG NHẬP ---
-    const pageLoginForm = document.getElementById("pageLoginForm");
-    
-    // SỬA LỖI: Chỉ kích hoạt nếu đang đứng ở trang dang-nhap.html (nơi có form đăng nhập)
-    if (pageLoginForm) {
-        pageLoginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const emailInput = pageLoginForm.querySelector("input[type='email']");
-            const email = emailInput ? emailInput.value : "Thành viên";
-            
-            alert(`[VOGUE X SYSTEM]:\nĐồng bộ tài khoản thành công! Chào mừng hội viên VIP: ${email}`);
-            window.location.href = "index.html"; // Chuyển hướng người dùng về trang chủ
-        });
-    }
+    });
 });
+
+// === CHẶNG 09: Kiểm tra Form đăng ký trước khi gửi (submit + preventDefault) ===
+const contactForm = document.getElementById("contactForm");
+const fullName = document.getElementById("fullName");
+const email = document.getElementById("email");
+const formMessage = document.getElementById("formMessage");
+
+if (contactForm && fullName && email && formMessage) {
+    contactForm.addEventListener("submit", function(event) {
+        // Ngăn trình duyệt load lại trang
+        event.preventDefault();
+
+        const nameValue = fullName.value.trim();
+        const emailValue = email.value.trim();
+
+        // Kiểm tra họ tên trống
+        if (nameValue === "") {
+            formMessage.textContent = "⚠️ Vui lòng nhập tên Trưởng nhóm / Nhà thiết kế!";
+            formMessage.style.color = "#ff003c";
+            return;
+        }
+
+        // Kiểm tra email trống hoặc thiếu ký tự @
+        if (emailValue === "" || !emailValue.includes("@")) {
+            formMessage.textContent = "⚠️ Vui lòng nhập địa chỉ Email liên hệ hợp lệ!";
+            formMessage.style.color = "#ff003c";
+            return;
+        }
+
+        // Nếu tất cả hợp lệ
+        formMessage.textContent = "✔️ Đăng ký tham gia tuần lễ thời trang thành công! Hội đồng nghệ thuật sẽ liên hệ sớm nhất.";
+        formMessage.style.color = "#00ff66";
+        
+        // Reset form sau khi gửi thành công
+        contactForm.reset();
+    });
+}
