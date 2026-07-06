@@ -16,7 +16,7 @@
             <a href="#evolution">Phát Triển</a>
             <a href="#benefits">Giá Trị</a>
             <a href="#gallery">Thư Viện Ảnh</a>
-            <a href="#contact">Đăng Ký Đội</a>
+            <a href="#contact">Đăng Ký </a>
         </nav>
     </header>
 
@@ -80,9 +80,9 @@
         
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">Tất Cả</button>
-            <button class="filter-btn" data-filter="stage">Sân Khấu</button>
-            <button class="filter-btn" data-filter="player">Tuyển Thủ</button>
-            <button class="filter-btn" data-filter="trophy">Cúp Vô Địch</button>
+            <button class="filter-btn" data-filter="stage">Tin Tức Sự Kiện </button>
+            <button class="filter-btn" data-filter="player">Xu Hướng Thời Trang</button>
+            <button class="filter-btn" data-filter="trophy">Làm Đẹp</button>
         </div>
 
         <div class="gallery-grid">
@@ -104,7 +104,7 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <h2>Đăng Ký Tham Gia Giải Đấu</h2>
+        <h2>Đăng Ký Tham Gia </h2>
         <form id="contactForm" class="esports-form">
             <div class="form-group">
                 <label for="fullName">Tên Trưởng Nhóm / Nhà Thiết Kế:</label>
