@@ -3,195 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vogue X - Kênh Thời Trang Đột Phá 2026</title>
+    <title>Vogue X - Tạp Chí Thời Trang 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- NAV BAR -->
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html"><h1>VOGUE<span>.X</span></h1></a>
-            </div>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><h1>VOGUE<span>.X</span></h1></a></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Trang Chủ</a></li>
-                    <li><a href="#tin-tuc">Tin Tức</a></li>
-                    <li><a href="#su-kien">Sự Kiện</a></li>
-                    <li><a href="#xu-huong">Xu Hướng</a></li>
-                    <li><a href="#lam-dep">Làm Đẹp</a></li>
-                    <li><a href="#" id="loginBtn" class="login-nav-btn">Đăng Nhập</a></li>
+                    <li><a href="tin-tuc.html">Tin Tức & Sự Kiện</a></li>
+                    <li><a href="xu-huong.html">Xu Hướng</a></li>
+                    <li><a href="lam-dep.html">Làm Đẹp</a></li>
+                    <li><a href="dang-nhap.html" class="login-nav-btn">Đăng Nhập</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- CONTAINER CHÍNH -->
     <div class="container">
-        
-        <!-- HERO BANNER RỰC LỬA -->
         <div class="hero-banner">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="card-tag tag-hot">HOT UPDATE</span>
-                <h2><a href="#" class="article-link">Tuần lễ Thời trang Paris 2026: Bản giao hưởng của lụa và lửa nghệ thuật kỹ thuật số</a></h2>
-                <p>Khám phá bộ sưu tập phá vỡ mọi giới hạn truyền thống của các nhà mốt Haute Couture hàng đầu.</p>
+                <span class="card-tag tag-hot" style="background:var(--primary); color:#fff;">Tiêu Điểm Toàn Cầu</span>
+                <h2><a href="tin-tuc.html">Tuần lễ Thời trang Paris 2026: Phong cách bền vững bùng nổ</a></h2>
+                <p>Hơn 80% các nhà mốt xa xỉ cam kết ứng dụng chất liệu tuần hoàn tự phân hủy hữu cơ.</p>
             </div>
         </div>
 
-        <!-- BỐ CỤC 2 CỘT CHÍNH -->
         <div class="main-layout">
-            
-            <!-- CỘT TRÁI: TỔNG HỢP CÁC PHÂN VÙNG CHỦ ĐỀ CHUYÊN SÂU -->
             <main class="content-area">
-                
-                <!-- PHÂN VÙNG 1: TIN TỨC TRONG & NGOÀI NƯỚC -->
-                <section id="tin-tuc" class="topic-section">
-                    <h2 class="section-title">Tin Tức Thời Trang Điện Tử</h2>
+                <section class="topic-section">
+                    <h2 class="section-title">Tin Tức & Sự Kiện Hot</h2>
                     <div class="grid-layout">
                         <div class="card">
-                            <img src="https://picsum.photos/400/250?random=1" alt="Fashion News">
+                            <img src="https://picsum.photos/400/250?random=1" alt="News">
                             <div class="card-content">
-                                <span class="card-tag">Quốc Tế</span>
-                                <h3><a href="#" class="article-link">Sự trỗi dậy của vải sợi carbon sinh học tại Milan</a></h3>
-                                <p>Vật liệu mới siêu nhẹ, tự phục hồi vết xước đang trở thành tâm điểm của ngành công nghiệp dệt may toàn cầu.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="https://picsum.photos/400/250?random=2" alt="Fashion News">
-                            <div class="card-content">
-                                <span class="card-tag">Trong Nước</span>
-                                <h3><a href="#" class="article-link">Ra mắt sàn giao dịch trang phục số đầu tiên tại Việt Nam</a></h3>
-                                <p>Ứng dụng công nghệ VR/AR giúp người dùng thử trang phục thiết kế ngay tại nhà chỉ trong 3 giây.</p>
+                                <span class="card-tag">Sự Kiện</span>
+                                <h3><a href="tin-tuc.html">Met Gala công bố chủ đề độc lạ cho thảm đỏ năm nay</a></h3>
+                                <p>Sự pha trộn giữa công nghệ ánh sáng thông minh tương lai và thời trang may mặc cao cấp cổ điển...</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- PHÂN VÙNG 2: SỰ KIỆN NỔI BẬT -->
-                <section id="su-kien" class="topic-section">
-                    <h2 class="section-title">Sự Kiện & Thảm Đỏ</h2>
+                <section class="topic-section">
+                    <h2 class="section-title">Xu Hướng Đang Lên Ngôi</h2>
                     <div class="grid-layout">
                         <div class="card">
-                            <img src="https://picsum.photos/400/250?random=3" alt="Met Gala">
+                            <img src="https://picsum.photos/400/250?random=2" alt="Trend">
                             <div class="card-content">
-                                <span class="card-tag">Met Gala 2026</span>
-                                <h3><a href="#" class="article-link">Đêm hội rực rỡ nhất: Khi trang phục phát sáng thống trị thảm đỏ</a></h3>
-                                <p>Hàng loạt siêu sao xuất hiện với những bộ cánh tích hợp sợi phản quang tinh xảo.</p>
+                                <span class="card-tag">Xu hướng</span>
+                                <h3><a href="xu-huong.html">Trào lưu phối trang phục đơn sắc Minimalism tinh tế</a></h3>
+                                <p>Vẻ đẹp thanh lịch từ việc tối giản hóa phụ kiện, tập trung vào những đường cắt may đỉnh cao tôn dáng...</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- PHÂN VÙNG 3: XU HƯỚNG MỚI -->
-                <section id="xu-huong" class="topic-section">
-                    <h2 class="section-title">Xu Hướng & Phong Cách Đương Đại</h2>
+                <section class="topic-section">
+                    <h2 class="section-title">Bí Quyết Làm Đẹp</h2>
                     <div class="grid-layout">
                         <div class="card">
-                            <img src="https://picsum.photos/400/250?random=4" alt="Trend">
+                            <img src="https://picsum.photos/400/250?random=3" alt="Beauty">
                             <div class="card-content">
-                                <span class="card-tag">Cyberpunk Techwear</span>
-                                <h3><a href="#" class="article-link">Xu hướng Techwear phản quang chiếm lĩnh thời trang đường phố</a></h3>
-                                <p>Sự pha trộn giữa tính ứng dụng cao của túi hộp và chất liệu chống thấm công nghệ cao.</p>
+                                <span class="card-tag">Chăm sóc da</span>
+                                <h3><a href="lam-dep.html">Quy trình cấp ẩm phục hồi da cấp tốc sau hậu trường</a></h3>
+                                <p>Giải pháp tối ưu từ chuyên gia giúp làn da siêu mẫu lấy lại sự căng bóng rực rỡ sau lớp trang điểm dày đặc...</p>
                             </div>
                         </div>
                     </div>
                 </section>
-
-                <!-- PHÂN VÙNG 4: LÀM ĐẸP & PHẢN HỒI Ý KIẾN -->
-                <section id="lam-dep" class="topic-section">
-                    <h2 class="section-title">Góc Làm Đẹp & Skincare Công Nghệ</h2>
-                    <div class="beauty-box">
-                        <h3>Liệu pháp trẻ hóa tế bào bằng ánh sáng sinh học 2026</h3>
-                        <p style="margin: 15px 0; color: #ccc;">Không còn là những chu trình dưỡng da 10 bước phức tạp, xu hướng làm đẹp tối giản kết hợp thiết bị bước sóng ánh sáng thông minh đang làm thay đổi hoàn toàn làn da giới trẻ.</p>
-                        
-                        <!-- VÙNG BÌNH LUẬN NÂNG CẤP -->
-                        <div class="comment-container">
-                            <h4>Độc giả thảo luận (<span id="comment-count">0</span>)</h4>
-                            
-                            <form id="commentForm" class="comment-form">
-                                <textarea id="commentInput" rows="3" placeholder="Nhập suy nghĩ hoặc phản hồi của bạn..." required></textarea>
-                                <button type="submit" class="btn-glow">Gửi Bình Luận</button>
-                            </form>
-
-                            <div id="commentList" class="comment-list">
-                                <!-- Bình luận được tải động từ JS vào đây -->
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
             </main>
 
-            <!-- CỘT PHẢI: HOT LINKS & LIÊN KẾT LIÊN QUAN -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
-                    <h3 class="sidebar-title">Liên Kết Hot Nhất</h3>
+                    <h3 class="sidebar-title">Liên Kết Tiêu Điểm</h3>
                     <ul class="related-links">
-                        <li>
-                            <a href="#">» Top 10 Local Brand Việt Nam vươn tầm Đông Nam Á</a>
-                            <small>Tin tiêu điểm</small>
-                        </li>
-                        <li>
-                            <a href="#">» Cách phối đồ sắc Cam Cháy chuẩn không cần chỉnh</a>
-                            <small>Xu hướng phối màu</small>
-                        </li>
-                        <li>
-                            <a href="#">» Đánh giá dòng son kem lì chống trôi thế hệ mới</a>
-                            <small>Review Mỹ Phẩm</small>
-                        </li>
+                        <li><a href="tin-tuc.html">» Cập nhật thảm đỏ Paris Fashion Week</a><small>Tin tức</small></li>
+                        <li><a href="xu-huong.html">» Top 5 phụ kiện túi xách to bản 2026</a><small>Xu hướng</small></li>
+                        <li><a href="lam-dep.html">» Đánh giá dòng kem nền chống trôi thế hệ mới</a><small>Làm đẹp</small></li>
                     </ul>
                 </div>
             </aside>
-
         </div>
     </div>
 
-    <!-- POPUP ĐĂNG NHẬP (MODAL) -->
-    <div id="loginModal" class="modal-overlay">
-        <div class="modal-content">
-            <span id="closeBtn" class="close-btn">&times;</span>
-            <h2 class="fire-text">VOGUE MEMBER</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label>Email tài khoản</label>
-                    <input type="email" placeholder="Nhập email của bạn..." required>
-                </div>
-                <div class="form-group">
-                    <label>Mật khẩu mật</label>
-                    <input type="password" placeholder="Nhập mật khẩu..." required>
-                </div>
-                <button type="submit" class="btn-glow" style="width: 100%; padding: 12px;">Xác Nhận Đăng Nhập</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- FOOTER & SITE MAP -->
     <footer>
         <div class="container footer-grid">
             <div>
-                <h3>VOGUE.X NET</h3>
-                <p>Nền tảng số hóa thông tin thời trang đa quốc gia phá cách nhất hiện tại.</p>
+                <h3>VOGUE.X NETWORK</h3>
+                <p>Nền tảng truyền thông điện tử dẫn đầu dòng chảy thời trang thế giới hiện đại.</p>
             </div>
-            
-            <!-- SITE MAP ĐƯỢC CHUẨN HÓA -->
             <div class="footer-sitemap">
                 <h3>SƠ ĐỒ TRANG WEB (SITE MAP)</h3>
                 <ul>
-                    <li><a href="index.html">» Trang chủ hệ thống</a></li>
-                    <li><a href="#tin-tuc">» Phân vùng Tin Tức Trong & Ngoài nước</a></li>
-                    <li><a href="#su-kien">» Phân vùng Sự Kiện Thảm Đỏ</a></li>
-                    <li><a href="#xu-huong">» Phân vùng Xu Hướng Mới</a></li>
-                    <li><a href="#lam-dep">» Chuyên mục Làm Đẹp & Ý kiến</a></li>
+                    <li><a href="index.html">» Trang chủ (Bản tin tổng hợp)</a></li>
+                    <li><a href="tin-tuc.html">» Phân vùng Tin Tức & Sự Kiện Quốc tế</a></li>
+                    <li><a href="xu-huong.html">» Phân vùng Xu Hướng Thời Trang Mới</a></li>
+                    <li><a href="lam-dep.html">» Chuyên mục Chăm Sóc Da & Làm Đẹp</a></li>
+                    <li><a href="dang-nhap.html">» Trang Đăng Nhập Thành Viên VIP</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Vogue X. Điện toán hóa giao diện tương lai.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Vogue X. Điện toán hóa thời trang.</p></div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
