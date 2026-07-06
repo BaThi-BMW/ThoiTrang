@@ -1,98 +1,107 @@
-document.addEventListener("DOMContentLoaded", function () {
+/**
+ * VOGUE X - CORE JAVASCRIPT SYSTEM
+ * Hệ thống xử lý nạp dữ liệu động không load lại trang.
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
     
-    // --- KHAI BÁO BIẾN CHO POPUP ĐĂNG NHẬP ---
-    const loginModal = document.getElementById("loginModal");
-    const loginBtn = document.getElementById("loginBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const loginForm = document.getElementById("loginForm");
-    const openLoginFooter = document.querySelector(".open-login-footer");
+    // --- KHỞI TẠO CƠ SỞ DỮ LIỆU BÌNH LUẬN BAN ĐẦU ---
+    const initialComments = [
+        { user: "Kiều Anh (Hà Nội)", text: "Liệu công nghệ sợi sinh học này khi nào thì có ứng dụng thực tế tại sàn diễn Việt Nam vậy ạ?" },
+        { user: "Hoàng Long", text: "Trang phục techwear phản quang phối với sneaker hầm hố nhìn cháy phố thực sự." }
+    ];
 
-    // Hàm mở popup đăng nhập
-    function openModal(e) {
-        e.preventDefault();
-        loginModal.style.display = "flex";
-    }
-
-    // Hàm đóng popup đăng nhập
-    function closeModal() {
-        loginModal.style.display = "none";
-    }
-
-    // Gán sự kiện click cho các nút Đăng nhập
-    if (loginBtn) loginBtn.addEventListener("click", openModal);
-    if (openLoginFooter) openLoginFooter.addEventListener("click", openModal);
-    if (closeBtn) closeBtn.addEventListener("click", closeModal);
-
-    // Click ra ngoài biểu mẫu sẽ tự động đóng popup
-    window.addEventListener("click", function (e) {
-        if (e.target === loginModal) {
-            closeModal();
-        }
-    });
-
-    // Xử lý nộp Form đăng nhập thành viên viên
-    if (loginForm) {
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Ngăn trang reload
-            const emailInput = loginForm.querySelector("input[type='email']").value;
-
-            alert(`Chào mừng thành viên [ ${emailInput} ] đăng nhập hệ thống thành công!`);
-            closeModal();
-            loginForm.reset(); // Xóa sạch dữ liệu ô nhập
-
-            // Thay đổi chữ trên thanh menu sau khi đăng nhập thành công
-            if (loginBtn) {
-                loginBtn.textContent = "Tài Khoản";
-                loginBtn.style.background = "#ff3366";
-            }
-        });
-    }
-
-    // --- KHAI BÁO BIẾN CHO PHẦN BÌNH LUẬN ĐỘNG ---
+    // Các phần tử DOM cần tương tác
     const commentForm = document.getElementById("commentForm");
     const commentInput = document.getElementById("commentInput");
     const commentList = document.getElementById("commentList");
     const commentCount = document.getElementById("commentCount");
+    const loginModal = document.getElementById("loginModal");
+    const loginBtn = document.getElementById("loginBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const loginForm = document.getElementById("loginForm");
 
-    let count = 2; // Số lượng bình luận mặc định ban đầu
-
-    if (commentForm && commentList) {
-        commentForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Ngăn trình duyệt tải lại trang
-
-            const text = commentInput.value.trim();
-
-            if (text === "") return;
-
-            // 1. Tạo cấu trúc khối bình luận mới bằng JS
-            const newComment = document.createElement("div");
-            newComment.className = "comment-item";
-            newComment.innerHTML = `
-                <strong>Bạn (Vừa xong):</strong>
-                <p>${text}</p>
+    // --- HỆ THỐNG XỬ LÝ BÌNH LUẬN (RENDER ENGINE) ---
+    function renderComments(commentsArray) {
+        if (!commentList) return;
+        commentList.innerHTML = ""; // Làm sạch danh sách cũ
+        
+        commentsArray.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "comment-item";
+            div.innerHTML = `
+                <strong>${item.user}:</strong>
+                <p>${item.text}</p>
             `;
+            commentList.appendChild(div);
+        });
 
-            // 2. Chèn bình luận mới lên vị trí đầu tiên của danh sách
-            commentList.insertBefore(newComment, commentList.firstChild);
+        if (commentCount) commentCount.textContent = commentsArray.length;
+    }
 
-            // 3. Tăng số lượng bộ đếm bình luận hiển thị công khai
-            count++;
-            if (commentCount) commentCount.textContent = count;
+    // Tải bình luận mặc định khi trang web load xong
+    renderComments(initialComments);
 
-            // 4. Reset dọn sạch khung nhập liệu
-            commentInput.value = "";
+    // Xử lý khi có độc giả gửi comment mới
+    if (commentForm) {
+        commentForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const textValue = commentInput.value.trim();
+
+            if (!textValue) return;
+
+            // Thêm phần tử mới vào đầu mảng dữ liệu hiện tại
+            initialComments.unshift({
+                user: "Bạn (Vừa xong)",
+                text: textValue
+            });
+
+            // Gọi hàm render lại giao diện mới cập nhật
+            renderComments(initialComments);
+            commentInput.value = ""; // Dọn sạch ô nhập liệu
         });
     }
 
-    // --- MÔ PHỎNG CLICK VÀO CÁC LINK HOT CHUYỂN BÀI VIẾT ---
-    const articleLinks = document.querySelectorAll(".article-link, .related-links a, .hero-content h2 a");
-    articleLinks.forEach(link => {
+
+    // --- HỆ THỐNG ĐIỀU KHIỂN POPUP ĐĂNG NHẬP THÀNH VIÊN ---
+    const toggleModal = (show) => {
+        if (loginModal) loginModal.style.display = show ? "flex" : "none";
+    };
+
+    if (loginBtn) loginBtn.addEventListener("click", (e) => { e.preventDefault(); toggleModal(true); });
+    if (closeBtn) closeBtn.addEventListener("click", () => toggleModal(false));
+    
+    window.addEventListener("click", (e) => {
+        if (e.target === loginModal) toggleModal(false);
+    });
+
+    // Xử lý gửi Form Đăng nhập hệ thống
+    if (loginForm) {
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = loginForm.querySelector("input[type='email']").value;
+
+            alert(`[VOGUE.X]: Đồng bộ tài khoản đám mây của thành viên thành công!\nChào mừng: ${email}`);
+            toggleModal(false);
+            loginForm.reset();
+
+            // Cập nhật trạng thái hiển thị của nút đăng nhập trên Header
+            if (loginBtn) {
+                loginBtn.textContent = "DASHBOARD";
+                loginBtn.style.background = "linear-gradient(45deg, #00f0ff, #0072ff)";
+                loginBtn.style.boxShadow = "0 0 15px rgba(0,240,255,0.4)";
+            }
+        });
+    }
+
+    // --- MÔ PHỎNG SỰ KIỆN LIÊN KẾT ĐIỀU HƯỚNG ---
+    const allLinks = document.querySelectorAll(".article-link, .related-links a, .hero-content h2 a");
+    allLinks.forEach(link => {
         link.addEventListener("click", function (e) {
-            // Nếu link chưa gán địa chỉ thực tế (đang để dấu #)
             if (this.getAttribute("href") === "#") {
                 e.preventDefault();
-                alert(`[Điều Hướng]: Hệ thống đang mở bài viết chi tiết:\n"${this.innerText}"`);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                alert(`[Hệ thống]: Đang mã hóa và tải luồng bài viết chi tiết:\n"${this.innerText}"`);
+                window.scrollTo({ top: 0, behavior: "smooth" });
             }
         });
     });
