@@ -28,32 +28,50 @@
         <div class="slide">Khám Phá Phong Cách Thời Trang 2026</div>
     </section>
 
-    <!-- PHÂN VÙNG CHỦ ĐỀ -->
+    <!-- PHÂN VÙNG CÁC CHỦ ĐỀ CHÍNH -->
     <main class="container">
+        
+        <!-- Chủ đề 1: Tin Tức -->
         <section class="topic-box" id="news-section">
             <h2>Tin Tức Thời Trang</h2>
-            <p>Cập nhật thông tin thời trang trong và ngoài nước...</p>
+            <p>Cập nhật những thông tin, biến động và câu chuyện thời trang nóng hổi trong và ngoài nước...</p>
             <a href="tin-tuc.html" class="btn">Xem tất cả tin tức</a>
         </section>
 
+        <!-- Chủ đề 2: Sự Kiện -->
+        <section class="topic-box" id="event-section">
+            <h2>Sự Kiện Nổi Bật</h2>
+            <p>Theo dòng các tuần lễ thời trang danh giá (Fashion Week), các buổi triển lãm và show diễn lớn toàn cầu...</p>
+            <a href="su-kien.html" class="btn">Xem sự kiện</a>
+        </section>
+
+        <!-- Chủ đề 3: Xu Hướng -->
         <section class="topic-box" id="trend-section">
             <h2>Xu Hướng Mới</h2>
-            <p>Các xu hướng thu đông, xuân hè thịnh hành toàn cầu...</p>
+            <p>Khám phá các xu hướng thu đông, xuân hè, phong cách streetstyle thịnh hành đang dẫn dắt thị trường...</p>
             <a href="xu-huong.html" class="btn">Khám phá xu hướng</a>
         </section>
-        
-        <!-- KHU VỰC BÌNH LUẬN MẪU -->
+
+        <!-- Chủ đề 4: Làm Đẹp -->
+        <section class="topic-box" id="beauty-section">
+            <h2>Bí Quyết Làm Đẹp</h2>
+            <p>Chăm sóc da, xu hướng trang điểm đột phá phối hợp hoàn hảo cùng các bộ cánh thời thượng...</p>
+            <a href="lam-dep.html" class="btn">Bí quyết làm đẹp</a>
+        </section>
+
+        <!-- KHU VỰC BÌNH LUẬN & PHẢN HỒI Ý KIẾN -->
         <section class="comment-section">
             <h3>Bình luận & Góp ý</h3>
             <form id="commentForm">
-                <input type="text" id="userName" placeholder="Tên của bạn" required><br>
-                <textarea id="commentContent" placeholder="Ý kiến của bạn về chủ đề này..." required></textarea><br>
+                <input type="text" id="userName" placeholder="Tên của bạn" required>
+                <textarea id="commentContent" placeholder="Ý kiến của bạn về chủ đề này..." required></textarea>
                 <button type="submit">Gửi bình luận</button>
             </form>
             <div id="commentList">
                 <!-- Bình luận sẽ tự động thêm vào đây bằng JQuery -->
             </div>
         </section>
+
     </main>
 
     <!-- FOOTER & SITE MAP -->
