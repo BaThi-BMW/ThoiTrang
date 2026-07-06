@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức & Sự Kiện Chi Tiết - Vogue X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><h1>VOGUE<span>.X</span></h1></a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="tin-tuc.html" class="active">Tin Tức & Sự Kiện</a></li>
+                    <li><a href="xu-huong.html">Xu Hướng</a></li>
+                    <li><a href="lam-dep.html">Làm Đẹp</a></li>
+                    <li><a href="dang-nhap.html" class="login-nav-btn">Đăng Nhập</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <div class="container main-layout">
+        <main class="article-detail">
+            <h2>Tuần lễ Thời trang Paris 2026: Sự bùng nổ của kỷ nguyên chất liệu xanh</h2>
+            <div class="meta-info">Đăng ngày: 06/07/2026 | Tác giả: Minh Tuấn</div>
+            
+            <div class="article-body">
+                <p>Năm nay, Paris không chỉ phô diễn nghệ thuật thiết kế mà còn gửi đi bức thông điệp sinh thái mạnh mẽ. Hơn 80% nhà mốt đã thay thế lụa nhân tạo thông thường bằng sợi tơ chiết xuất từ dứa và nấm hữu cơ.</p>
+                <img src="https://picsum.photos/800/450?random=11" alt="Paris Fashion Week">
+                <p>Hai ông lớn Chanel và Dior đã hoàn toàn chinh phục giới mộ điệu toàn cầu bằng bộ sưu tập Haute Couture lộng lẫy được chế tác từ sợi tái sinh có khả năng tự phân hủy trong môi trường tự nhiên mà không để lại hạt vi nhựa.</p>
+            </div>
+
+            <section class="comment-section">
+                <h3>Phản hồi từ bạn đọc (<span id="comment-count">0</span>)</h3>
+                <form id="commentForm" class="comment-form">
+                    <textarea id="commentInput" rows="4" placeholder="Viết bình luận hoặc thắc mắc của bạn về sự kiện này..." required></textarea>
+                    <button type="submit" class="btn-glow">Gửi ý kiến</button>
+                </form>
+                <div id="commentList" class="comment-list"></div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-sticky">
+                <h3 class="sidebar-title">Sự Kiện Liên Quan</h3>
+                <ul class="related-links">
+                    <li><a href="xu-huong.html">» Xu hướng ứng dụng vật liệu tái chế cuối năm 2026</a><small>Xu Hướng</small></li>
+                    <li><a href="lam-dep.html">» Các phong cách Make-up nổi bật tại hậu trường Milan</a><small>Làm Đẹp</small></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
