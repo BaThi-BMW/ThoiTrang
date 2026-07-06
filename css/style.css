@@ -67,12 +67,13 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 5px 0;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    border-bottom: 2px solid transparent; /* Tránh bị giật khung khi hover */
 }
 
 .main-menu ul li a:hover,
 .main-menu ul li a.active {
-    color: #ff4757; /* Màu đỏ hồng làm điểm nhấn */
+    color: #ff4757;
     border-bottom: 2px solid #ff4757;
 }
 
@@ -95,7 +96,7 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
-    animation: fadeInDown 1s ease;
+    animation: fadeInDown 1s ease forwards;
 }
 
 /* ==========================================================================
@@ -103,7 +104,7 @@ header {
    ========================================================================== */
 main.container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive lưới tự động mượt mà */
     gap: 30px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -115,6 +116,12 @@ main.container {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.topic-box:hover {
+    transform: translateY(-5px) scale(1.02); /* Phóng to nhẹ và nhấc hộp lên */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .topic-box h2 {
@@ -150,7 +157,7 @@ main.container {
     font-weight: 600;
     text-transform: uppercase;
     border-radius: 4px;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 .btn:hover {
@@ -161,7 +168,7 @@ main.container {
    5. KHU VỰC BÌNH LUẬN (COMMENTS)
    ========================================================================== */
 .comment-section {
-    grid-column: 1 / -1; /* Trải dài hết các cột trong Grid */
+    grid-column: 1 / -1; 
     background: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -183,7 +190,7 @@ main.container {
     border-radius: 4px;
     outline: none;
     font-size: 14px;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s ease;
 }
 
 #commentForm input[type="text"]:focus,
@@ -197,6 +204,8 @@ main.container {
 }
 
 #commentForm button {
+    display: inline-block;
+    margin-top: 5px;
     padding: 12px 25px;
     background-color: #000;
     color: #fff;
@@ -205,7 +214,7 @@ main.container {
     cursor: pointer;
     font-weight: 600;
     text-transform: uppercase;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 #commentForm button:hover {
@@ -219,6 +228,10 @@ main.container {
 .user-comment {
     border-bottom: 1px solid #eee;
     padding: 15px 0;
+}
+
+.user-comment:last-child {
+    border-bottom: none;
 }
 
 .user-comment strong {
@@ -238,7 +251,7 @@ footer {
     background-color: #111;
     color: #bbb;
     padding: 40px 0 20px 0;
-    margin-top: 5px;
+    margin-top: 40px; 
 }
 
 .footer-content {
@@ -264,11 +277,11 @@ footer {
 
 .sitemap ul li a {
     font-size: 14px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .sitemap ul li a:hover {
-    color: #fff;
+    color: #ff4757; 
     text-decoration: underline;
 }
 
@@ -280,7 +293,39 @@ footer > p {
     padding-top: 20px;
 }
 
-/* Hiệu ứng mượt mà cho Banner */
+/* ==========================================================================
+   7. RESPONSIVE CHO THIẾT BỊ DI ĐỘNG
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .main-menu ul li {
+        margin: 0 10px;
+    }
+
+    .hero-banner {
+        height: 300px;
+    }
+
+    .hero-banner .slide {
+        font-size: 24px;
+        letter-spacing: 1px;
+        padding: 0 15px;
+    }
+
+    .sitemap ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ==========================================================================
+   8. HIỆU ỨNG ĐỘNG (ANIMATIONS)
+   ========================================================================== */
 @keyframes fadeInDown {
     from {
         opacity: 0;
