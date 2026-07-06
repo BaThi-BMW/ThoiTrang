@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vogue Magazine - Thời Trang Trong & Ngoài Nước</title>
+    <title>Vogue X - Kênh Thời Trang Đột Phá 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. THANH MENU ĐIỀU HƯỚNG -->
+    <!-- NAV BAR -->
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="index.html"><h1>VOGUE.VN</h1></a>
+                <a href="index.html"><h1>VOGUE<span>.X</span></h1></a>
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Trang Chủ</a></li>
-                    <li><a href="#tin-tuc">Tin tức & Sự kiện</a></li>
+                    <li><a href="#tin-tuc">Tin Tức</a></li>
+                    <li><a href="#su-kien">Sự Kiện</a></li>
                     <li><a href="#xu-huong">Xu Hướng</a></li>
                     <li><a href="#lam-dep">Làm Đẹp</a></li>
                     <li><a href="#" id="loginBtn" class="login-nav-btn">Đăng Nhập</a></li>
@@ -26,94 +27,96 @@
         </div>
     </header>
 
-    <!-- 2. BANNER TIÊU ĐIỂM HOT NHẤT -->
+    <!-- CONTAINER CHÍNH -->
     <div class="container">
+        
+        <!-- HERO BANNER RỰC LỬA -->
         <div class="hero-banner">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="card-tag tag-highlight">Tiêu Điểm Quốc Tế</span>
-                <h2><a href="#">Tuần lễ Thời trang Paris: Sự trỗi dậy của phong cách bền vững</a></h2>
-                <p>Xem ngay những bộ sưu tập đình đám nhất vừa được trình diễn tại kinh đô ánh sáng thế giới.</p>
+                <span class="card-tag tag-hot">HOT UPDATE</span>
+                <h2><a href="#" class="article-link">Tuần lễ Thời trang Paris 2026: Bản giao hưởng của lụa và lửa nghệ thuật kỹ thuật số</a></h2>
+                <p>Khám phá bộ sưu tập phá vỡ mọi giới hạn truyền thống của các nhà mốt Haute Couture hàng đầu.</p>
             </div>
         </div>
 
-        <!-- LAYOUT CHÍNH: 2 CỘT (NỘI DUNG & LIÊN KẾT LIÊN QUAN) -->
+        <!-- BỐ CỤC 2 CỘT CHÍNH -->
         <div class="main-layout">
             
-            <!-- CỘT TRÁI: CÁC PHÂN VÙNG CHỦ ĐỀ CHÍNH -->
+            <!-- CỘT TRÁI: TỔNG HỢP CÁC PHÂN VÙNG CHỦ ĐỀ CHUYÊN SÂU -->
             <main class="content-area">
                 
-                <!-- CHỦ ĐỀ 1: TIN TỨC & SỰ KIỆN -->
+                <!-- PHÂN VÙNG 1: TIN TỨC TRONG & NGOÀI NƯỚC -->
                 <section id="tin-tuc" class="topic-section">
-                    <h2 class="section-title">Tin tức & Sự kiện nổi bật</h2>
+                    <h2 class="section-title">Tin Tức Thời Trang Điện Tử</h2>
                     <div class="grid-layout">
                         <div class="card">
-                            <img src="https://picsum.photos/400/250?random=1" alt="Fashion Event">
+                            <img src="https://picsum.photos/400/250?random=1" alt="Fashion News">
                             <div class="card-content">
-                                <span class="card-tag">Trong nước</span>
-                                <h3><a href="#" class="article-link">Vietnam International Fashion Week khai mạc tại TP.HCM</a></h3>
-                                <p>Sự kiện quy tụ hàng loạt nhà thiết kế hàng đầu Việt Nam và khu vực với những bộ sưu tập mang đậm bản sắc văn hóa.</p>
+                                <span class="card-tag">Quốc Tế</span>
+                                <h3><a href="#" class="article-link">Sự trỗi dậy của vải sợi carbon sinh học tại Milan</a></h3>
+                                <p>Vật liệu mới siêu nhẹ, tự phục hồi vết xước đang trở thành tâm điểm của ngành công nghiệp dệt may toàn cầu.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="https://picsum.photos/400/250?random=2" alt="Met Gala">
+                            <img src="https://picsum.photos/400/250?random=2" alt="Fashion News">
                             <div class="card-content">
-                                <span class="card-tag">Quốc tế</span>
-                                <h3><a href="#" class="article-link">Met Gala công bố chủ đề độc lạ gây sốt giới mộ điệu toàn cầu</a></h3>
-                                <p>Chủ đề năm nay hứa hẹn sẽ mang đến những màn rải thảm đỏ đi vào lịch sử thời trang đương đại.</p>
+                                <span class="card-tag">Trong Nước</span>
+                                <h3><a href="#" class="article-link">Ra mắt sàn giao dịch trang phục số đầu tiên tại Việt Nam</a></h3>
+                                <p>Ứng dụng công nghệ VR/AR giúp người dùng thử trang phục thiết kế ngay tại nhà chỉ trong 3 giây.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- CHỦ ĐỀ 2: XU HƯỚNG THỜI TRANG -->
+                <!-- PHÂN VÙNG 2: SỰ KIỆN NỔI BẬT -->
+                <section id="su-kien" class="topic-section">
+                    <h2 class="section-title">Sự Kiện & Thảm Đỏ</h2>
+                    <div class="grid-layout">
+                        <div class="card">
+                            <img src="https://picsum.photos/400/250?random=3" alt="Met Gala">
+                            <div class="card-content">
+                                <span class="card-tag">Met Gala 2026</span>
+                                <h3><a href="#" class="article-link">Đêm hội rực rỡ nhất: Khi trang phục phát sáng thống trị thảm đỏ</a></h3>
+                                <p>Hàng loạt siêu sao xuất hiện với những bộ cánh tích hợp sợi phản quang tinh xảo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PHÂN VÙNG 3: XU HƯỚNG MỚI -->
                 <section id="xu-huong" class="topic-section">
-                    <h2 class="section-title">Xu Hướng Thời Trang Mới</h2>
+                    <h2 class="section-title">Xu Hướng & Phong Cách Đương Đại</h2>
                     <div class="grid-layout">
                         <div class="card">
-                            <img src="https://picsum.photos/400/250?random=3" alt="Pastel Trend">
+                            <img src="https://picsum.photos/400/250?random=4" alt="Trend">
                             <div class="card-content">
-                                <span class="card-tag">Phong cách</span>
-                                <h3><a href="#" class="article-link">Sắc Pastel lên ngôi: Cách phối đồ cực chất cho nàng công sở</a></h3>
-                                <p>Tone màu dịu nhẹ đang chiếm lĩnh các sàn diễn đường phố từ Seoul, Tokyo cho đến kinh đô Milan.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="https://picsum.photos/400/250?random=4" alt="Oversized Bag">
-                            <div class="card-content">
-                                <span class="card-tag">Phụ kiện</span>
-                                <h3><a href="#" class="article-link">Túi xách Oversized - Khi sự tiện dụng "đánh bại" trào lưu túi mini</a></h3>
-                                <p>Sự trở lại mạnh mẽ của những chiếc túi khổng lồ mang tính ứng dụng cao trong nửa đầu năm nay.</p>
+                                <span class="card-tag">Cyberpunk Techwear</span>
+                                <h3><a href="#" class="article-link">Xu hướng Techwear phản quang chiếm lĩnh thời trang đường phố</a></h3>
+                                <p>Sự pha trộn giữa tính ứng dụng cao của túi hộp và chất liệu chống thấm công nghệ cao.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- CHỦ ĐỀ 3: LÀM ĐẸP (CÓ TÍNH NĂNG BÌNH LUẬN) -->
+                <!-- PHÂN VÙNG 4: LÀM ĐẸP & PHẢN HỒI Ý KIẾN -->
                 <section id="lam-dep" class="topic-section">
-                    <h2 class="section-title">Bí Quyết Làm Đẹp & Skincare</h2>
-                    <div class="beauty-highlight-box">
-                        <h3>Chuyên mục: Các bước chăm sóc da chuẩn siêu mẫu sau hậu trường</h3>
-                        <p style="margin: 10px 0; color: #555;">Lớp trang điểm đậm và dày trên sàn diễn luôn là khắc tinh của làn da. Cùng khám phá chu trình làm sạch sâu và cấp ẩm cấp tốc được các chuyên gia trang điểm hàng đầu thế giới tiết lộ.</p>
+                    <h2 class="section-title">Góc Làm Đẹp & Skincare Công Nghệ</h2>
+                    <div class="beauty-box">
+                        <h3>Liệu pháp trẻ hóa tế bào bằng ánh sáng sinh học 2026</h3>
+                        <p style="margin: 15px 0; color: #ccc;">Không còn là những chu trình dưỡng da 10 bước phức tạp, xu hướng làm đẹp tối giản kết hợp thiết bị bước sóng ánh sáng thông minh đang làm thay đổi hoàn toàn làn da giới trẻ.</p>
                         
-                        <!-- VÙNG BÌNH LUẬN FEEDBACK -->
-                        <div class="comment-box">
-                            <h4>Phản hồi từ độc giả (<span id="comment-count">2</span>)</h4>
+                        <!-- VÙNG BÌNH LUẬN NÂNG CẤP -->
+                        <div class="comment-container">
+                            <h4>Độc giả thảo luận (<span id="comment-count">0</span>)</h4>
                             
                             <form id="commentForm" class="comment-form">
-                                <textarea id="commentInput" rows="3" placeholder="Chia sẻ ý kiến hoặc thắc mắc của bạn về bài viết này..." required></textarea>
-                                <button type="submit" class="btn-submit">Gửi bình luận</button>
+                                <textarea id="commentInput" rows="3" placeholder="Nhập suy nghĩ hoặc phản hồi của bạn..." required></textarea>
+                                <button type="submit" class="btn-glow">Gửi Bình Luận</button>
                             </form>
 
                             <div id="commentList" class="comment-list">
-                                <div class="comment-item">
-                                    <strong>Minh Thư:</strong>
-                                    <p>Bài viết rất hữu ích, mình đã thử áp dụng và da đỡ kích ứng hẳn sau khi đi tiệc về.</p>
-                                </div>
-                                <div class="comment-item">
-                                    <strong>Tuấn Kiệt:</strong>
-                                    <p>Có sản phẩm nào lành tính gợi ý cho da dầu nam giới không ạ?</p>
-                                </div>
+                                <!-- Bình luận được tải động từ JS vào đây -->
                             </div>
                         </div>
                     </div>
@@ -121,26 +124,22 @@
 
             </main>
 
-            <!-- CỘT PHẢI: BÀI VIẾT LIÊN QUAN / TIN HOT CẬP NHẬT -->
+            <!-- CỘT PHẢI: HOT LINKS & LIÊN KẾT LIÊN QUAN -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
-                    <h3 class="sidebar-title">Nội dung liên quan hot nhất</h3>
+                    <h3 class="sidebar-title">Liên Kết Hot Nhất</h3>
                     <ul class="related-links">
                         <li>
-                            <a href="#">» Top 5 NTK Việt Nam tạo dấu ấn đậm nét tại sàn diễn Châu Âu</a>
-                            <small>Xu hướng toàn cầu</small>
+                            <a href="#">» Top 10 Local Brand Việt Nam vươn tầm Đông Nam Á</a>
+                            <small>Tin tiêu điểm</small>
                         </li>
                         <li>
-                            <a href="#">» Cách phối đồ Retro cổ điển không lo bị "cũ"</a>
-                            <small>Mẹo Style</small>
+                            <a href="#">» Cách phối đồ sắc Cam Cháy chuẩn không cần chỉnh</a>
+                            <small>Xu hướng phối màu</small>
                         </li>
                         <li>
-                            <a href="#">» 10 thói quen tai hại hủy hoại làn da vào mùa hè</a>
-                            <small>Chăm sóc da</small>
-                        </li>
-                        <li>
-                            <a href="#">» Phong cách Streetwear nam giới đột phá năm nay</a>
-                            <small>Thời trang Nam</small>
+                            <a href="#">» Đánh giá dòng son kem lì chống trôi thế hệ mới</a>
+                            <small>Review Mỹ Phẩm</small>
                         </li>
                     </ul>
                 </div>
@@ -149,57 +148,50 @@
         </div>
     </div>
 
-    <!-- 3. POPUP (MODAL) ĐĂNG NHẬP THÀNH VIÊN -->
+    <!-- POPUP ĐĂNG NHẬP (MODAL) -->
     <div id="loginModal" class="modal-overlay">
         <div class="modal-content">
             <span id="closeBtn" class="close-btn">&times;</span>
-            <h2>ĐĂNG NHẬP THÀNH VIÊN</h2>
-            <p style="text-align: center; color: #777; margin-bottom: 20px; font-size: 13px;">Nhận tin tức xu hướng thời trang sớm nhất</p>
+            <h2 class="fire-text">VOGUE MEMBER</h2>
             <form id="loginForm">
                 <div class="form-group">
                     <label>Email tài khoản</label>
-                    <input type="email" placeholder="example@gmail.com" required>
+                    <input type="email" placeholder="Nhập email của bạn..." required>
                 </div>
                 <div class="form-group">
-                    <label>Mật khẩu</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <label>Mật khẩu mật</label>
+                    <input type="password" placeholder="Nhập mật khẩu..." required>
                 </div>
-                <button type="submit" class="btn-login">Vào hệ thống</button>
+                <button type="submit" class="btn-glow" style="width: 100%; padding: 12px;">Xác Nhận Đăng Nhập</button>
             </form>
         </div>
     </div>
 
-    <!-- 4. FOOTER & SITE MAP (SƠ ĐỒ TRANG WEB) -->
+    <!-- FOOTER & SITE MAP -->
     <footer>
         <div class="container footer-grid">
-            <div class="footer-about">
-                <h3>VOGUE MAGAZINE</h3>
-                <p>Kênh thông tin thời trang, làm đẹp và phong cách sống hàng đầu luôn cập nhật dòng chảy thời trang trong và ngoài nước.</p>
+            <div>
+                <h3>VOGUE.X NET</h3>
+                <p>Nền tảng số hóa thông tin thời trang đa quốc gia phá cách nhất hiện tại.</p>
             </div>
             
-            <!-- SITE MAP ĐIỀU HƯỚNG TOÀN DIỆN -->
+            <!-- SITE MAP ĐƯỢC CHUẨN HÓA -->
             <div class="footer-sitemap">
                 <h3>SƠ ĐỒ TRANG WEB (SITE MAP)</h3>
                 <ul>
-                    <li><a href="index.html">» Trang chủ (Tổng hợp tiêu điểm)</a></li>
-                    <li><a href="#tin-tuc">» Tin tức & Sự kiện sự kiện thời trang quốc tế</a></li>
-                    <li><a href="#xu-huong">» Bộ sưu tập & Xu hướng trang phục mới nhất</a></li>
-                    <li><a href="#lam-dep">» Góc làm đẹp, Skincare và Mỹ phẩm</a></li>
-                    <li><a href="#" class="open-login-footer">» Khu vực đăng nhập thành viên viên</a></li>
+                    <li><a href="index.html">» Trang chủ hệ thống</a></li>
+                    <li><a href="#tin-tuc">» Phân vùng Tin Tức Trong & Ngoài nước</a></li>
+                    <li><a href="#su-kien">» Phân vùng Sự Kiện Thảm Đỏ</a></li>
+                    <li><a href="#xu-huong">» Phân vùng Xu Hướng Mới</a></li>
+                    <li><a href="#lam-dep">» Chuyên mục Làm Đẹp & Ý kiến</a></li>
                 </ul>
-            </div>
-
-            <div class="footer-contact">
-                <h3>LIÊN HỆ BAN BIÊN TẬP</h3>
-                <p>Tòa soạn: Quận 1, TP. Hồ Chí Minh<br>Email: editorial@vogue.vn<br>Hotline: 1900 xxxx</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Vogue Magazine. Bản quyền giao diện được thiết kế chuẩn responsive.</p>
+            <p>&copy; 2026 Vogue X. Điện toán hóa giao diện tương lai.</p>
         </div>
     </footer>
 
-    <!-- TÍCH HỢP FILE JAVASCRIPT -->
     <script src="script.js"></script>
 </body>
 </html>
