@@ -1,4 +1,6 @@
-/* Reset CSS */
+/* ==========================================================================
+   1. ĐỊNH DẠNG CHUNG (RESET & BASE)
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,243 +8,286 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Tone màu chủ đạo: Đen tối, Đỏ rực lửa và Đèn Neon */
 body {
-    background: radial-gradient(circle at center, #1a0505 0%, #050000 100%);
-    color: #ffffff;
+    background-color: #f9f9f9;
+    color: #333;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* Header */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. THANH ĐIỀU HƯỚNG (STICKY MENU)
+   ========================================================================== */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: rgba(0, 0, 0, 0.85);
-    border-bottom: 3px solid #ff003c;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px #ff003c;
-}
-
-.logo span {
-    color: #ff003c;
-}
-
-.main-menu a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.main-menu a:hover {
-    color: #ff003c;
-    text-shadow: 0 0 8px #ff003c;
-}
-
-.menu-toggle {
-    display: none; /* Ẩn ở màn hình máy tính */
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Hero Section */
-.hero-section {
-    height: 60vh;
+.main-menu {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.main-menu .logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-menu ul li {
+    margin-left: 25px;
+}
+
+.main-menu ul li a {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+    color: #ff4757; /* Màu đỏ hồng làm điểm nhấn */
+    border-bottom: 2px solid #ff4757;
+}
+
+/* ==========================================================================
+   3. HERO BANNER
+   ========================================================================== */
+.hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600') no-repeat center center/cover;
+    height: 450px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-    border-bottom: 2px solid #00f0ff;
-}
-
-#mainTitle {
-    font-size: 3rem;
-    text-transform: uppercase;
     color: #fff;
-    text-shadow: 0 0 20px #ff003c, 0 0 40px #ff003c;
-    margin-bottom: 15px;
-}
-
-#welcomeText {
-    font-size: 1.2rem;
-    color: #00f0ff;
-    margin-bottom: 25px;
-}
-
-/* Nút bấm & Hiệu ứng */
-.btn-primary, .btn-submit, .filter-btn {
-    background: #ff003c;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 0 0 15px rgba(255, 0, 60, 0.6);
-    transition: 0.3s;
-}
-
-.btn-primary:hover, .btn-submit:hover {
-    background: #00f0ff;
-    color: #000;
-    box-shadow: 0 0 20px #00f0ff;
-}
-
-.result-text {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    color: #00ff66;
-    font-weight: bold;
-}
-
-/* Gallery Section */
-.gallery-section, .contact-section {
-    padding: 60px 5%;
     text-align: center;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+.hero-banner .slide {
+    font-size: 36px;
+    font-weight: 700;
     text-transform: uppercase;
-    border-left: 5px solid #ff003c;
-    padding-left: 10px;
-    display: inline-block;
+    letter-spacing: 3px;
+    animation: fadeInDown 1s ease;
 }
 
-.filter-container {
-    margin-bottom: 30px;
-}
-
-.filter-btn {
-    background: #222;
-    padding: 8px 20px;
-    margin: 5px;
-    font-size: 14px;
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background: #ff003c;
-    box-shadow: 0 0 10px #ff003c;
-}
-
-.gallery-grid {
+/* ==========================================================================
+   4. PHÂN VÙNG CHỦ ĐỀ (GRID LAYOUT)
+   ========================================================================== */
+main.container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-.gallery-item {
-    background: #111;
-    border: 2px solid #222;
+.topic-box {
+    background: #fff;
+    padding: 30px;
     border-radius: 8px;
-    overflow: hidden;
-    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    cursor: pointer;
+}
+
+.topic-box h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
     position: relative;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    border-color: #ff003c;
-    box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-.item-info {
-    padding: 15px;
-    font-weight: bold;
-    background: #111;
+    padding-bottom: 10px;
     text-transform: uppercase;
-    font-size: 14px;
 }
 
-/* Form Section */
-.esports-form {
-    max-width: 500px;
-    margin: 0 auto;
-    background: rgba(17, 17, 17, 0.9);
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #00f0ff;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
-    text-align: left;
+.topic-box h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #000;
 }
 
-.form-group {
+.topic-box p {
+    color: #666;
+    font-size: 15px;
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #00f0ff;
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
-.form-group input {
+.btn:hover {
+    background-color: #ff4757;
+}
+
+/* ==========================================================================
+   5. KHU VỰC BÌNH LUẬN (COMMENTS)
+   ========================================================================== */
+.comment-section {
+    grid-column: 1 / -1; /* Trải dài hết các cột trong Grid */
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-top: 20px;
+}
+
+.comment-section h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#commentForm input[type="text"],
+#commentForm textarea {
     width: 100%;
     padding: 12px;
-    background: #222;
-    border: 1px solid #444;
-    color: #fff;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.form-group input:focus {
     outline: none;
-    border-color: #ff003c;
-    box-shadow: 0 0 8px #ff003c;
+    font-size: 14px;
+    transition: border-color 0.3s;
 }
 
-.btn-submit {
-    width: 100%;
-    margin-top: 10px;
+#commentForm input[type="text"]:focus,
+#commentForm textarea:focus {
+    border-color: #000;
 }
 
-.form-message {
-    margin-top: 15px;
-    font-weight: bold;
+#commentForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#commentForm button {
+    padding: 12px 25px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+#commentForm button:hover {
+    background-color: #ff4757;
+}
+
+#commentList {
+    margin-top: 30px;
+}
+
+.user-comment {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.user-comment strong {
+    color: #ff4757;
+    font-size: 15px;
+}
+
+.user-comment p {
+    margin-top: 5px;
+    color: #444;
+}
+
+/* ==========================================================================
+   6. CHÂN TRANG & SITE MAP
+   ========================================================================== */
+footer {
+    background-color: #111;
+    color: #bbb;
+    padding: 40px 0 20px 0;
+    margin-top: 5px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sitemap h4 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.sitemap ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sitemap ul li a {
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.sitemap ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer > p {
     text-align: center;
+    font-size: 13px;
+    margin-top: 30px;
+    border-top: 1px solid #222;
+    padding-top: 20px;
 }
 
-/* Responsive Menu */
-@media (max-width: 768px) {
-    .menu-toggle { display: block; }
-    .main-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 73px; right: 5%;
-        background: #111;
-        width: 200px;
-        border: 1px solid #ff003c;
-        padding: 10px;
+/* Hiệu ứng mượt mà cho Banner */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    .main-menu.active { display: flex; }
-    .main-menu a { margin: 10px 0; }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
